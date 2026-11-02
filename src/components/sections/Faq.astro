@@ -1,0 +1,24 @@
+---
+import { faqs } from '../../data/content';
+---
+<section class="e-sec" id="faq" style="padding-top: 0">
+  <div class="e-wrap e-two" style="align-items: start">
+    <div>
+      <span class="e-kicker">FAQ</span>
+      <h2 class="e-h2">Questions before your first mock</h2>
+      <p class="e-lead">Still unsure? Ask your placement cell about the next mock day, or write to us.</p>
+      <a href="#contact" class="e-btn-ghost" style="margin-top: 28px; padding: 0 22px">Contact us</a>
+    </div>
+    <div class="e-faq">
+      {faqs.map((f, i) => (
+        <div class:list={['e-fq', { open: i === 0 }]} data-faq>
+          <button type="button" aria-expanded={i === 0 ? 'true' : 'false'} aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+            <span>{f.q}</span>
+            <span class="chev" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <p class="ans" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`} hidden={i !== 0}>{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import { marqueeA, marqueeB } from '../../data/content';
+---
+<section class="e-marq" aria-label="Questions you will practise">
+  <div class="e-marq-t">Questions you’ll actually hear on placement day — in English and Hinglish</div>
+  <div class="marquee">
+    <div class="track">
+      {marqueeA.map((q) => (
+        <span class="q"><b class={q.l === 'EN' ? '' : 'mr'}>{q.l}</b>{q.t}</span>
+      ))}
+    </div>
+  </div>
+  <div class="marquee" style="margin-top: 14px">
+    <div class="track rev">
+      {marqueeB.map((q) => (
+        <span class="q"><b class={q.l === 'EN' ? '' : 'mr'}>{q.l}</b>{q.t}</span>
+      ))}
+    </div>
+  </div>
+</section>

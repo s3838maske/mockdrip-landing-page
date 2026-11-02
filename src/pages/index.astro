@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/sections/Nav.astro';
+import Hero from '../components/sections/Hero.astro';
+import Marquee from '../components/sections/Marquee.astro';
+import Why from '../components/sections/Why.astro';
+import Features from '../components/sections/Features.astro';
+import Preview from '../components/sections/Preview.astro';
+import How from '../components/sections/How.astro';
+import Levels from '../components/sections/Levels.astro';
+import Journey from '../components/sections/Journey.astro';
+import Audience from '../components/sections/Audience.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import Faq from '../components/sections/Faq.astro';
+import Start from '../components/sections/Start.astro';
+import Footer from '../components/sections/Footer.astro';
+import AiAssistant from '../components/islands/AiAssistant';
+---
+<Base
+  title="MockDrip — Ace your next interview with a strict AI interviewer"
+  description="A strict 10-minute voice mock interview in English or Hinglish. Your scored report lands two minutes later — every lost point quoted in your own words."
+>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="mm e-dark">
+    <!-- Apply the saved theme before first paint so there is no flash. -->
+    <script is:inline>
+      (function () {
+        var mm = document.currentScript.parentElement, t = null;
+        try { t = localStorage.getItem('mockdrip-theme'); } catch (e) {}
+        if (t === 'light') {
+          mm.classList.replace('e-dark', 'e-light');
+          document.documentElement.style.colorScheme = 'light';
+        }
+      })();
+    </script>
+    <Nav />
+    <main id="main" style="display: contents">
+      <Hero />
+      <Marquee />
+      <Why />
+      <Features />
+      <Preview />
+      <How />
+      <Levels />
+      <Journey />
+      <Audience />
+      <Testimonials />
+      <Pricing />
+      <Faq />
+      <Start />
+    </main>
+    <Footer />
+    <AiAssistant client:idle />
+  </div>
+</Base>
+
+<script>
+  import { initMotion } from '../scripts/motion';
+  import { initInteractions } from '../scripts/interactions';
+  import { initThemeSwitch } from '../scripts/theme';
+  import { initMesh } from '../scripts/mesh';
+  import { initSmoothScroll } from '../scripts/smooth-scroll';
+
+  initInteractions();
+  initThemeSwitch();
+  initMotion();
+  initSmoothScroll();
+  const mesh = document.querySelector<HTMLCanvasElement>('[data-n9="mesh"]');
+  if (mesh) initMesh(mesh);
+</script>

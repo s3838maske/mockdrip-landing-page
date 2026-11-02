@@ -1,0 +1,19 @@
+---
+import { testimonialColumns } from '../../data/content';
+---
+<section class="e-sec" style="padding-top: 0">
+  <div class="e-wrap">
+    <div class="e-head-c">
+      <span class="e-kicker">From the pilot</span>
+      <h2 class="e-h2">Students hear the difference by mock three</h2>
+    </div>
+    <div class="e-3d">
+      <div class="e-3d-in">
+      <div class="e3-col"><div class="e3-track">{testimonialColumns[0].map((t) => (<figure class="e3-card"><figcaption class="e-who"><span class={`av ${t.av}`}>{t.i}</span><span><b>{t.n}</b><small>{t.r}</small></span></figcaption><p>“{t.q}”</p></figure>))}</div></div>
+      <div class="e3-col rev"><div class="e3-track">{testimonialColumns[1].map((t) => (<figure class="e3-card"><figcaption class="e-who"><span class={`av ${t.av}`}>{t.i}</span><span><b>{t.n}</b><small>{t.r}</small></span></figcaption><p>“{t.q}”</p></figure>))}</div></div>
+      <div class="e3-col"><div class="e3-track">{testimonialColumns[2].map((t) => (<figure class="e3-card"><figcaption class="e-who"><span class={`av ${t.av}`}>{t.i}</span><span><b>{t.n}</b><small>{t.r}</small></span></figcaption><p>“{t.q}”</p></figure>))}</div></div>
+      <div class="e3-col rev"><div class="e3-track">{testimonialColumns[3].map((t) => (<figure class="e3-card"><figcaption class="e-who"><span class={`av ${t.av}`}>{t.i}</span><span><b>{t.n}</b><small>{t.r}</small></span></figcaption><p>“{t.q}”</p></figure>))}</div></div>
+      </div>
+    </div>
+  </div>
+</section>

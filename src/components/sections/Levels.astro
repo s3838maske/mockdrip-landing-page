@@ -1,0 +1,33 @@
+---
+import { levels, defaultLevel } from '../../data/content';
+const lvl = levels.find((l) => l.key === defaultLevel)!;
+---
+<section class="e-sec" id="levels" style="padding-top: 0">
+  <div class="e-wrap e-two">
+    <div>
+      <span class="e-kicker">Hinglish → English bridge</span>
+      <h2 class="e-h2">Know the answer in Hinglish? <span class="dim">Learn to say it in English.</span></h2>
+      <p class="e-lead">Most students lose marks on language, not knowledge. Climb three levels at your own pace — the report shows exactly where your English still drops off.</p>
+      <div class="e-lvls" role="group" data-levels aria-label="Bridge levels">
+        {levels.map((l) => (
+          <button type="button" class:list={['e-lvl', { on: l.key === defaultLevel }]} aria-pressed={l.key === defaultLevel ? 'true' : 'false'} data-level={l.key}>
+            <span class="tag">{l.key}</span>
+            <span><b>{l.name}</b><small>{l.sub}</small></span>
+          </button>
+        ))}
+      </div>
+    </div>
+    <div class="e-card e-convo" aria-live="polite">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px">
+        <span style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em"><span data-lvl="title">{lvl.title}</span></span>
+        <span class="e-chip g"><span data-lvl="key">{lvl.key}</span></span>
+      </div>
+      <p class="e-lead" style="margin: 0; font-size: 15.5px"><span data-lvl="desc">{lvl.desc}</span></p>
+      <span class="e-lab" style="margin-top: 6px">Interviewer</span>
+      <div class="e-bub ai"><span data-lvl="iLine">{lvl.iLine}</span></div>
+      <span class="e-lab" style="align-self: flex-end">You</span>
+      <div class="e-bub me"><span data-lvl="sLine">{lvl.sLine}</span></div>
+      <div class="e-note"><span class="e-lab"><span data-lvl="noteTitle">{lvl.noteTitle}</span></span><div><span data-lvl="note">{lvl.note}</span></div></div>
+    </div>
+  </div>
+</section>
