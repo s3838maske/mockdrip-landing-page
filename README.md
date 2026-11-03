@@ -10,6 +10,10 @@ npm run build    # type-check + static build into dist/
 npm run preview  # serve the built site
 ```
 
+## Links to the portal
+
+The sign-up buttons ("Start free", "Start free mock", "Get the Sprint", "Start my free mock") open the MockDrip portal's sign-up, which is a separate app. Its address comes from `PUBLIC_APP_URL` (see `.env.example`). It defaults to `http://localhost:3000`, where the portal runs locally; set it for every deploy. The links themselves are in `src/data/links.ts`.
+
 ## Tech stack, and why
 
 | Layer | Choice | Why it helps UX |
