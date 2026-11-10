@@ -22,15 +22,15 @@ import AiAssistant from '../components/islands/AiAssistant';
   description="A strict 10-minute voice mock interview in English or Hinglish. Your scored report lands two minutes later — every lost point quoted in your own words."
 >
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="mm e-dark">
-    <!-- Apply the saved theme before first paint so there is no flash. -->
+  <div class="mm e-light">
+    <!-- Light is the default (Page 13); apply a saved dark choice before first paint so there is no flash. -->
     <script is:inline>
       (function () {
         var mm = document.currentScript.parentElement, t = null;
         try { t = localStorage.getItem('mockdrip-theme'); } catch (e) {}
-        if (t === 'light') {
-          mm.classList.replace('e-dark', 'e-light');
-          document.documentElement.style.colorScheme = 'light';
+        if (t === 'dark') {
+          mm.classList.replace('e-light', 'e-dark');
+          document.documentElement.style.colorScheme = 'dark';
         }
       })();
     </script>

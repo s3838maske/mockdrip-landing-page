@@ -48,8 +48,8 @@ export function initMesh(c: HTMLCanvasElement) {
     if (!visible) return;
     if (Math.abs(c.getBoundingClientRect().width - W) > 1) size();
     const light = currentTheme() === 'light';
-    const DOT = light ? '#23382C' : '#C9E6D4';
-    const ACC = light ? '#16A34A' : '#BEF264';
+    const DOT = light ? '#2D2D2E' : '#B9C7DF';
+    const ACC = light ? '#164AA3' : '#699AED';
     const amul = light ? 0.75 : 1;
     const t = reduce ? 0 : (now - t0) / 1000;
     ctx.clearRect(0, 0, W, H);

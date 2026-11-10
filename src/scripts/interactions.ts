@@ -75,9 +75,58 @@ function initMenu() {
   });
 }
 
+export interface StartRequest { name: string; college: string; drive: string; phone: string }
+
+// Hand-off point for the sign-up backend. Until it exists the form only validates
+// and confirms on the page; replace the body with a POST to your API.
+async function submitStart(_req: StartRequest): Promise<void> {}
+
+const FIELD_LABELS: Record<string, string> = { name: 'your name', college: 'your college', phone: 'a 10-digit mobile number' };
+
+function initStartForm() {
+  const form = document.querySelector<HTMLFormElement>('[data-start]');
+  const status = document.getElementById('start-status');
+  if (!form || !status) return;
+  const fields = $$<HTMLInputElement>('input', form);
+  const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+
+  // Clear an error as soon as the blank is fixed.
+  fields.forEach((f) => f.addEventListener('input', () => {
+    if (f.getAttribute('aria-invalid') === 'true' && f.checkValidity()) f.removeAttribute('aria-invalid');
+  }));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    fields.forEach((f) => (f.value = f.value.trim()));
+    const invalid = fields.filter((f) => !f.checkValidity());
+    fields.forEach((f) => (invalid.includes(f) ? f.setAttribute('aria-invalid', 'true') : f.removeAttribute('aria-invalid')));
+    if (invalid.length) {
+      status.dataset.state = 'error';
+      const missing = new Intl.ListFormat('en', { type: 'conjunction' }).format(invalid.map((f) => FIELD_LABELS[f.name]));
+      status.textContent = `Add ${missing} to start.`;
+      invalid[0].focus();
+      return;
+    }
+    const data = Object.fromEntries(new FormData(form)) as unknown as StartRequest;
+    button.disabled = true;
+    status.dataset.state = '';
+    status.textContent = 'Setting up your mock…';
+    try {
+      await submitStart(data);
+      status.dataset.state = 'ok';
+      status.textContent = `You’re set, ${data.name}. Your free mock link goes to ${data.phone}.`;
+    } catch {
+      status.dataset.state = 'error';
+      status.textContent = 'That didn’t go through. Check your connection and try again.';
+      button.disabled = false;
+    }
+  });
+}
+
 export function initInteractions() {
   initPreviewTabs();
   initLevels();
   initFaq();
   initMenu();
+  initStartForm();
 }

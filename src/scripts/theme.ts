@@ -59,7 +59,7 @@ export function initThemeSwitch() {
       } else {
         const cover = document.createElement('div');
         cover.className = 'n9-vt-fallback';
-        cover.style.background = next === 'light' ? '#F6F8F6' : '#050505';
+        cover.style.background = next === 'light' ? '#F7F7F7' : '#050505';
         cover.style.setProperty('--x', `${x}px`);
         cover.style.setProperty('--y', `${y}px`);
         cover.style.setProperty('--r', `${R}px`);

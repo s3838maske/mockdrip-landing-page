@@ -1,5 +1,5 @@
 ---
-import { faqs } from '../../data/content';
+import { faqs, mailto } from '../../data/content';
 ---
 <section class="e-sec" id="faq" style="padding-top: 0">
   <div class="e-wrap e-two" style="align-items: start">
@@ -7,7 +7,7 @@ import { faqs } from '../../data/content';
       <span class="e-kicker">FAQ</span>
       <h2 class="e-h2">Questions before your first mock</h2>
       <p class="e-lead">Still unsure? Ask your placement cell about the next mock day, or write to us.</p>
-      <a href="#contact" class="e-btn-ghost" style="margin-top: 28px; padding: 0 22px">Contact us</a>
+      <a href={mailto('Question about MockDrip')} class="e-btn-ghost" style="margin-top: 28px; padding: 0 22px">Contact us</a>
     </div>
     <div class="e-faq">
       {faqs.map((f, i) => (

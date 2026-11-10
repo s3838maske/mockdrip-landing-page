@@ -92,3 +92,8 @@ export const faqs = [
   { q: 'What do I need to start?', a: 'A phone with Chrome or Safari and a working microphone. Earphones help — the mic check before every call tells you if anything needs fixing.' },
   { q: 'How does the Sprint guarantee work?', a: 'Complete all 10 Sprint mocks within 30 days. If your 10th mock’s readiness is not at least 15 points above your score before you bought the Sprint, we refund you to your original payment method.' },
 ];
+
+// Where "Contact us" / "Talk to us" send people. Placeholder: confirm the real inbox before launch.
+export const CONTACT_EMAIL = 'hello@mockdrip.in';
+export const mailto = (subject?: string) =>
+  `mailto:${CONTACT_EMAIL}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`;
