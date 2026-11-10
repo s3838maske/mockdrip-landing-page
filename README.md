@@ -3,7 +3,7 @@
 Production build of **Page 9 — Northline motion (scroll FX)** from the MockDrip Landing Page design canvas
 (https://claude.ai/artifact/N5S41PNw8cKrEgMqPL41PM, board `MockMate-p9.dc.html`), styled with the
 **Page 13 — Dashboard theme** (board `MockDrip-p13.dc.html`): neutral surfaces, navy/blue accents,
-black/white pill actions, Geist type, light theme by default.
+black/white pill actions, Geist type, dark theme by default.
 
 ```bash
 npm install

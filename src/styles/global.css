@@ -1886,8 +1886,7 @@ body{background:#070707}
 /* ---- site additions (outside the original design export) ---- */
 [hidden]{display:none !important}
 html{scroll-behavior:auto}
-body{margin:0;background:#F7F7F7}
-body:has(.mm.e-dark){background:#050505}
+body{margin:0;background:#050505}
 .skip-link{position:fixed;left:16px;top:-60px;z-index:1000;padding:10px 16px;border-radius:12px;background:#699AED;color:#070C14;font:600 14px 'Geist',system-ui,sans-serif;text-decoration:none;transition:top .2s}
 .skip-link:focus{top:16px}
 .mm :focus-visible{outline:2px solid #699AED;outline-offset:3px}
@@ -1912,3 +1911,5 @@ button.n9-liquid:disabled{opacity:.6;cursor:default}
 .mm.e-light .n9-start-status{color:#474748}
 .mm.e-light .n9-start-status[data-state="error"]{color:#B91C1C}
 .mm.e-light .n9-start-status[data-state="ok"]{color:#164AA3}
+/* an open mobile menu sits above the floating AI orb */
+.n9-nav.open{z-index:95}

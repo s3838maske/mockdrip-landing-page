@@ -1,3 +1,6 @@
+---
+import { AUTH_LINKS as auth } from '../../data/content';
+---
 <section class="n9-say n9-io" id="start">
   <div class="n9-wrap">
     <span class="n9-mono n9-enter" id="start-title">Start your free mock · fill in the blanks</span>
@@ -6,7 +9,7 @@
       <p class="n9-start-status n9-mono" id="start-status" role="status" aria-live="polite"></p>
       <div class="n9-say-act n9-enter" style="--d: 160ms">
         <button type="submit" class="n9-liquid lg">Start my free mock <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></button>
-        <span class="alt n9-mono">or <a href="#colleges">bring it to your college</a></span>
+        <span class="alt n9-mono">or <a href="#colleges">bring it to your college</a> · <a href={auth.login}>log in</a></span>
       </div>
     </form>
   </div>

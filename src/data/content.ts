@@ -97,3 +97,11 @@ export const faqs = [
 export const CONTACT_EMAIL = 'hello@mockdrip.in';
 export const mailto = (subject?: string) =>
   `mailto:${CONTACT_EMAIL}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`;
+
+// Sign-in routes of the MockDrip web app (the auth screens on the design canvas).
+// Point these at the live app's URLs once it is deployed.
+export const AUTH_LINKS = {
+  login: '/login',
+  signup: '/signup',
+  join: '/join',
+};
